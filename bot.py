@@ -64,7 +64,7 @@ async def approve_post(callback: CallbackQuery):
     post = PENDING_POSTS.pop(post_id, None)
     if post:
         await bot.send_message(chat_id=TELEGRAM_CHANNEL_ID, text=post["message"], reply_markup=get_reaction_keyboard())
-        await bot.send_message(chat_id=admin_user_id, text=f"✅ Новость опубликована: '{post['title']}')
+        await bot.send_message(chat_id=admin_user_id, text=f"✅ Новость опубликована: '{post['title']}'")
         sent_links = load_sent_links()
         sent_links.add(post["link"])
         save_sent_links(sent_links)
