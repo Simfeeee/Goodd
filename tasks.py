@@ -54,7 +54,6 @@ async def send_latest_news(bot: Bot):
         await bot.send_message(chat_id=admin_user_id, text=f"✅ Новость опубликована: '{item['title']}'")
         sent_links.add(item['link'])
         save_sent_links(sent_links)
-        print("⚠️ Пост отфильтрован или нет новостей")
         break
 
 async def send_evening_digest(bot: Bot):
@@ -78,7 +77,6 @@ async def send_evening_digest(bot: Bot):
         sent_links.add(item["link"])
         count += 1
         if count >= 5:
-        print("⚠️ Пост отфильтрован или нет новостей")
             break
     if count > 0:
         digest += "📅 Время публикации: 21:00"
