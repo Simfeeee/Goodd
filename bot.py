@@ -75,7 +75,7 @@ async def reject_post(callback: CallbackQuery):
     post_id = callback.data.split(":")[1]
     post = PENDING_POSTS.pop(post_id, None)
     if post:
-        await bot.send_message(chat_id=admin_user_id, text=f"🚫 Публикация отклонена: "{post['title']}"")
+        await bot.send_message(chat_id=admin_user_id, text=f"🚫 Публикация отклонена: '{post['title']}'")
     await callback.answer("Отклонено.")
 
 @dp.message(Command("обновить"))
