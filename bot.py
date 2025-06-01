@@ -84,6 +84,7 @@ async def cmd_update(message: types.Message):
     await send_latest_news()
     await message.answer("📩 Новость отправлена на модерацию.")
 
+from scheduler import start_scheduler
 async def main():
     start_scheduler()
     await dp.start_polling(bot)
